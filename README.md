@@ -1,43 +1,40 @@
 # Green Building Copilot
-AI tool that would help automating some tasks in the certification of green buildings. 
+This is an AI tool that would help automate the process of green building certification. 
 
-1. We aim to essentially use AI to validate and verify various checklists within the [GRIHA Standards](https://www.grihaindia.org/files/Manual_VolI.pdf)
-2. One parameter within the standards (10% weightage) that is termed sustainable site planning is what this tool aims to validate
-
+1. We aim to use AI to validate and verify various parameters within the [GRIHA Standards](https://www.grihaindia.org/files/Manual_VolI.pdf)
+2. We aim to demo the tool by automating the verification of one parameter within the standard (10% weightage), termed sustainable site planning.
 
 ## The problem 
 
-We are building this to solve the following problems
+The green building certification process is: 
 
-* Green building certification is a process that requires lots of human efforts 
-* This is also a lengthy process
-* And an expensive process
+* Lengthy
+* Expensive
+* High in human effort
 
-This leads to less adoption of Green Buildings
+This leads to lesser adoption of green buildings. Our aim is to solve these challenges and incentivise green buildings using AI. 
 
 ## The solution  
 
-Imagine an AI copilot tool that would help various stakeholders in the green building certification process (builders, consultants, green building standard body, ULBs) quickly and efficiently verify compliance with GRIHA standards and claim the benefits
+Imagine an AI tool that would help various stakeholders in the green building certification process (builders, consultants, green building certification body, ULBs) quickly and efficiently verify compliance with GRIHA standards and claim the benefits. 
 
 ## How does this work ?
 
 - This is a [worksheet](https://docs.google.com/spreadsheets/d/1ACInZjybHO91J53p1HrEaPxn8wKxdPAppkET2UgFlZw/edit?usp=sharing) that contains all the GRIHA parameters that need to validated once relevant documents are uploaded.
 - We did some priliminary assessment of the feasibility of which parameters can be automated. Some of the document required for automation has also been identified and provided in the worksheet.
 
-Here are some of the key steps we can get started with
-
+Here are some of the key steps we can get started with:
 1. Builders/consultants will upload the necessary documents including photos, videos, invoices, site plans...etc 
 2. Extract location details either from the files uploaded using OCR or directly upload the coordinates 
 3. Detect old trees, minimum nos of trees,...etc in the site plan using vision AI
 5. Use google map API or any OSM to say whether public facilities and amenities are present within the threshold
 7. Use computer vision to analyse designated vehicular tracks for NMT vehicles 
 
-
 ## Next Commitments
 
 We are looking for enthusiastic volunteers who can own pieces of this design puzzle. Please reach out to meghana@peopleplus.ai/vishnu@peopleplus.ai if you have expertise and/or interest in:
 
-1. **Technical Architecture**: Build out this capabilities using machine learning.
+1. **Technical Architecture**: Build out these capabilities using machine learning.
 
 
 ## Questions?
