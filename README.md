@@ -18,6 +18,8 @@ This leads to lesser adoption of green buildings. Our aim is to solve these chal
 
 Imagine an AI tool that would help various stakeholders in the green building certification process (builders, consultants, green building certification body, ULBs) quickly and efficiently verify compliance with GRIHA standards and claim the benefits. 
 
+![image](https://github.com/PeoplePlusAI/Green-Building-Copilot/assets/149042870/100a6844-53f5-4046-9024-7a8de5e6e59e)
+
 ## How does this work ?
 
 - This is a [worksheet](https://docs.google.com/spreadsheets/d/1ACInZjybHO91J53p1HrEaPxn8wKxdPAppkET2UgFlZw/edit?usp=sharing) that contains all the GRIHA parameters that need to validated once relevant documents are uploaded.
