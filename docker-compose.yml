@@ -1,0 +1,12 @@
+name: scraper
+
+services:
+  backend:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:${PORT}"
+    command: python manage.py runserver 0.0.0.0:${PORT}
+    volumes:
+      - .:/code
