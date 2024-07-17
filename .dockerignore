@@ -1,0 +1,5 @@
+.git
+.gitignore
+*.pyc
+db.sqlite3
+.venv
