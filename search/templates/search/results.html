@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'search/style.css' %}">
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>BEE Star Rating</th>
+            <th>GRIHA Compatible?</th>
+        </tr>
+        {% for row in products %}
+            <tr>
+                {% for product in row %}
+                    <td>{{ product }}</td>
+                {% endfor %}
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="3">No products found.</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'search' %}">New Search</a>
+</body>
+</html>

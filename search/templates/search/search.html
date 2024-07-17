@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'search/style.css' %}">
+</head>
+<body>
+    <h1>Product Search</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="query" placeholder="Enter search query">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
