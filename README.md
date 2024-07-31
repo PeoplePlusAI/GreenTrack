@@ -46,17 +46,9 @@ If you have any queries/doubts or new ideas regarding this project please create
 
 Learn more about other [people+ai](https://peopleplus.ai/) initiatives.
 
-## Setup
+## Contents
 
-Rename [`.env.example`](.env.example) to `.env`:
-```
-mv .env.example .env
-```
-Make any necessary changes to the fields.
+The source code for the following projects can be found in this repository:
 
-Then,  to start the backend, run:
-```
-docker compose up -d --build
-```
-
-Visit [http://localhost:6001](http://localhost:6001) to view the frontend.
+- [Energy Rating Evaluator](./Energy%20Rating%20Evaluator)
+- [Proximity Evaluator](./Proximity%20Evaluator)
