@@ -99,6 +99,41 @@ function calculateGrihaScore(location) {
     const service = new google.maps.places.PlacesService(map);
     let grihaScore = 0;
     let scoreBreakdown = "";
+    let counts = {
+        lessThan375m: 0,
+        between375mAnd400m: 0,
+    };
+    const closestPlaces = {};
+
+    // Define priority services
+    const priorityServices = {
+        healthcare: ["pharmacy", "doctor", "hospital", "drugstore"],
+        education: ["primary_school", "secondary_school", "university", "school"],
+        distribution: ["convenience_store", "supermarket", "store", "gas_station"],
+        publicTransit: ["bus_station", "subway_station", "transit_station", "train_station"],
+        publicServiceOffice: ["city_hall", "courthouse", "fire_station", "police", "post_office", "local_government_office", "embassy"],
+        sportsAndRecreation: ["gym", "park"],
+        socioCultural: ["community_center", "art_gallery", "movie_theater"],
+        religiousFacilities: ["church", "mosque", "hindu_temple", "synagogue"],
+        bankingFacilities: ["atm", "bank"],
+    };
+
+    // Function to check if a service is in the priority list
+    function getCategoryName(types) {
+        for (const [category, serviceTypes] of Object.entries(priorityServices)) {
+            if (types.some(type => serviceTypes.includes(type))) {
+                return category;
+            }
+        }
+        return null;
+    }
+
+    // Function to capitalize and format category names
+    function formatCategoryName(name) {
+        return name.replace(/([A-Z])/g, ' $1')
+            .replace(/^./, str => str.toUpperCase())
+            .replace(/_/g, ' ');
+    }
 
     grihaPlaces.forEach((place) => {
         const request = {
@@ -107,31 +142,48 @@ function calculateGrihaScore(location) {
             types: place.types,
         };
 
-/*
-This scoring is based on the GRIHA Guidelines, if the location of the essential service/amenity is less than 375m, 
-it is 2 points and if it's greater than 375m but less than 450m it is 1 point. */
-
         service.nearbySearch(request, (results, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
                 const closestPlace = results[0];
                 const distance = calculateDistance(location, closestPlace.geometry.location);
-                let placeScore = 0;
 
-                if (distance < 0.375) {
-                    placeScore = 2;
-                } else if (distance <= 0.45) {
-                    placeScore = 1;
+                const categoryName = getCategoryName(place.types);
+                if (categoryName) {
+                    // Store the closest place if it hasn't been stored yet, or if the new place is closer
+                    if (!closestPlaces[categoryName] || closestPlaces[categoryName].distance > distance) {
+                        closestPlaces[categoryName] = {
+                            name: closestPlace.name,
+                            distance: distance,
+                        };
+                    }
+
+                    if (distance < 0.375) {
+                        counts.lessThan375m++;
+                    } else if (distance <= 0.4) {
+                        counts.between375mAnd400m++;
+                    }
                 }
 
-                grihaScore += placeScore;
-                scoreBreakdown += `${place.name}: ${closestPlace.name}\nDistance: ${distance.toFixed(2)} km\nGRIHA Score: ${placeScore}\n\n`;
-            }
+                // After iterating through all grihaPlaces
+                if (counts.lessThan375m >= 5) {
+                    grihaScore = 2;
+                } else if (counts.between375mAnd400m >= 5) {
+                    grihaScore = 1;
+                }
 
-            document.getElementById("griha-score").innerText =
-                `Total GRIHA Score: ${grihaScore}\n\nScore Breakdown:\n\n${scoreBreakdown}`;
+                // Build the score breakdown for closest places with capitalized names
+                scoreBreakdown = Object.entries(closestPlaces).map(([category, data]) => {
+                    return `${formatCategoryName(category)}: ${data.name}\nDistance: ${data.distance.toFixed(2)} km\n`;
+                }).join("\n");
+
+                document.getElementById("griha-score").innerText =
+                    `Total GRIHA Score: ${grihaScore}\n\nClosest Places:\n\n${scoreBreakdown}`;
+            }
         });
     });
 }
+
+
 
 function calculateDistance(userLocation, location) {
     const rad = Math.PI / 180;
