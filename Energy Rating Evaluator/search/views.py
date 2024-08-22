@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from googlesearch import search
-from django.shortcuts import render
 from utils.search_db import find_closest_match
-from utils.amazon import most_relevant_amazon_product
+from utils.amazon import get_first_google_result,scrape_amazon_product
+from . import client
 
 def search_products(request):
     if request.method == 'POST':
         query = request.POST.get('query', '')
-        print(most_relevant_amazon_product(query))
-        M, R = find_closest_match(query,"./resources/csvs/DeepFreezersSample.csv",1)
-        C = ["Yes" if int(v)>=3 else "No" for v in R]
-        return render(request, 'search/results.html', {'products': list(zip(M,R,C)), 'query': query})
+        first_url = get_first_google_result(query)
+        features = scrape_amazon_product(first_url)
+        rating = client.extract_rating(features)
+        C = "Yes" if int(rating)>=3 else "No"
+        return render(request, 'search/results.html', {'products': [[query,rating,C]], 'query': query})
     return render(request, 'search/search.html')
