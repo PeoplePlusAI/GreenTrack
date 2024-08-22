@@ -9,7 +9,7 @@ from PIL import Image
 from prompt import get_extraction_prompt
 
 # Replace with your actual Groq API key
-GROQ_API_KEY = "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"
+GROQ_API_KEY = api_key
 
 # Initialize the Groq client
 client = Groq(api_key=GROQ_API_KEY)
