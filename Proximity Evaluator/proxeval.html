@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <title>EstateEval - Property Grader</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="backgroundMap" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+        <div id="map"></div>
+        <div class="row">
+            <div class="col-md-6" id="sidebar">
+                <h3 class="mt-0">Enter an Address</h3>
+                <input id="address" type="text" placeholder="Enter the address of a property you want to grade" class="form-control mb-3" />
+                <button id="getProximityGrading" class="btn btn-primary">Property Grading</button>
+                <h3 id="griha-heading">GRIHA Guidelines</h3>
+                <pre class="result-box" id="griha-score"></pre>
+            </div>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places&callback=initMap&v=weekly" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -18,7 +18,6 @@ This leads to lesser adoption of green buildings. Our aim is to solve these chal
 
 Imagine an AI tool that would help various stakeholders in the green building certification process (builders, consultants, green building certification body, ULBs) quickly and efficiently verify compliance with GRIHA standards and claim the benefits. 
 
-![](https://github.com/PeoplePlusAI/Green-Building-Copilot/assets/149042870/100a6844-53f5-4046-9024-7a8de5e6e59e=25x25)
 
 
 ## How does this work ?
@@ -47,17 +46,9 @@ If you have any queries/doubts or new ideas regarding this project please create
 
 Learn more about other [people+ai](https://peopleplus.ai/) initiatives.
 
-## Setup
+## Contents
 
-Rename [`.env.example`](.env.example) to `.env`:
-```
-mv .env.example .env
-```
-Make any necessary changes to the fields.
+The source code for the following projects can be found in this repository:
 
-Then,  to start the backend, run:
-```
-docker compose up -d --build
-```
-
-Visit [http://localhost:6001](http://localhost:6001) to view the frontend.
+- [Energy Rating Evaluator](./Energy%20Rating%20Evaluator)
+- [Proximity Evaluator](./Proximity%20Evaluator)

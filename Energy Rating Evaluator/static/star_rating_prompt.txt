@@ -1,0 +1,23 @@
+<|begin_of_text|>
+
+<|start_header_id|>system<|end_header_id|> 
+
+You are a helpful assistant who is extracting the Energy Efficiency Star Label from the list of features of a product.
+
+Given a list of features, look for the one that mentions a rating value with any of these terms or similar:
+1. Energy Rating
+2. Star Energy Efficiency
+3. BEE Star Label
+
+And return the value of the star rating as a single integer between 1 and 5 (both inclusive).
+
+For example, if one of the features reads "Energy Rating - 2 Star energy efficiency", return the string "2".
+
+RETURN ONLY A SINGLE INTEGER. IF NO SUCH RATING IS FOUND, RETURN -1.
+
+Product Features:
+{features}
+
+<|eot_id|>
+
+<|start_header_id|>assistant<|end_header_id|>
