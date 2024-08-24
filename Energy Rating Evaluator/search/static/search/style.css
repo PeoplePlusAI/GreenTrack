@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "JetBrains Mono", monospace;
     line-height: 1.6;
     color: #333;
     max-width: 800px;
@@ -48,7 +48,8 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -80,4 +81,53 @@ a {
 
 a:hover {
     background-color: #2980b9;
+}
+
+#attachButton {
+    border-radius: 4px;
+    height: 45px;
+}
+
+.file-upload-container {
+    height: 45px;
+}
+
+.inputfile+label {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    display: inline-block;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background-color: #2980b9;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    cursor: pointer;
+}
+
+#fileName {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.file-upload-container {
+    display: inline-block;
+    margin-right: 10px;
 }

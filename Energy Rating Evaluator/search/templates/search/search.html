@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Product Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'search/style.css' %}">
 </head>
+
 <body>
     <h1>Product Search</h1>
     <form method="post">
@@ -12,5 +18,22 @@
         <input type="text" name="query" placeholder="Enter search query">
         <button type="submit">Search</button>
     </form>
+
+    <form method="post" action="{% url 'upload' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="file-upload-container">
+            <input type="file" name="image" accept="image/*" id="imageInput" class="inputfile" />
+            <label for="imageInput">Choose File</label>
+            <span id="fileName"></span>
+        </div>
+        <button type="submit" id="attachButton">Submit</button>
+    </form>
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function (e) {
+            var fileName = e.target.files[0].name;
+            document.getElementById('fileName').textContent = fileName;
+        });
+    </script>
 </body>
+
 </html>
