@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Search Results</title>
+    <title>Energy Rating Evaluator</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'search/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 </head>
+
 <body>
     <h1>Product Energy Ratings</h1>
     <table>
@@ -14,17 +17,18 @@
             <th>GRIHA Compatible?</th>
         </tr>
         {% for row in products %}
-            <tr>
-                {% for product in row %}
-                    <td>{{ product }}</td>
-                {% endfor %}
-            </tr>
+        <tr>
+            {% for product in row %}
+            <td>{{ product }}</td>
+            {% endfor %}
+        </tr>
         {% empty %}
-            <tr>
-                <td colspan="3">No products found.</td>
-            </tr>
+        <tr>
+            <td colspan="3">No products found.</td>
+        </tr>
         {% endfor %}
     </table>
     <a href="{% url 'search' %}">New Search</a>
 </body>
+
 </html>

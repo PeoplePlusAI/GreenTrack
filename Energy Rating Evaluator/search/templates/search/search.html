@@ -2,17 +2,18 @@
 <html>
 
 <head>
-    <title>Product Search</title>
+    <title>Energy Rating Evaluator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
         rel="stylesheet">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'search/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 </head>
 
 <body>
-    <h1>Product Search</h1>
+    <h1>Energy Rating Evaluator</h1>
     <form method="post">
         {% csrf_token %}
         <input type="text" name="query" placeholder="Enter search query">
