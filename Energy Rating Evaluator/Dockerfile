@@ -1,10 +1,13 @@
-FROM python:3.11.9-alpine3.20
+FROM ubuntu:22.04
 
-ENV PIP_DISABLE_PIP_VERSION_CHECK 1
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV TZ=Asia/Kolkata
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apk add --no-cache firefox
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    tesseract-ocr \
+    firefox
 
 WORKDIR /code
 
