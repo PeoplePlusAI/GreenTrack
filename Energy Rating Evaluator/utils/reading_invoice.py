@@ -1,14 +1,9 @@
-import os
-import re
-
-import cv2
-import numpy as np
 import pdfplumber
-import pytesseract
-from env import GROQ_API_KEY
+from utils.env import GROQ_API_KEY
 from groq import Groq
 from PIL import Image
-from prompt import get_extraction_prompt
+from utils.io import read_file
+import pytesseract
 
 # Initialize the Groq client
 client = Groq(api_key=GROQ_API_KEY)
@@ -39,9 +34,7 @@ class TextExtractor:
         Extract text from a cv2 image object.
         """
         if self.image is not None:
-            # Convert the cv2 image to a PIL image for Tesseract
-            pil_image = Image.fromarray(cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB))
-            extracted_text = pytesseract.image_to_string(pil_image)
+            extracted_text = pytesseract.image_to_string(self.image)
             return extracted_text
         else:
             raise ValueError("No image provided for text extraction.")
@@ -69,20 +62,15 @@ class TextExtractor:
 
 # Function to extract text from the invoice
 def extract_text_from_invoice(invoice_content):
-    prompt = get_extraction_prompt(invoice_content)
+    prompt = read_file("static/names_extraction_prompt.txt").replace("{invoice_content}", invoice_content)
     chat_completion = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model="llama3-70b-8192",
     )
 
     response = chat_completion.choices[0].message.content.split("\n")[1:]
-    product_dict = {
-        parts[0].strip(): (parts[1].strip() if len(parts) > 1 else None)
-        for string in response
-        if (parts := string.split("\t"))
-    }
-    product_dict = {k: v for k, v in product_dict.items() if k}
-    return product_dict
+    product_list = [string.strip() for string in response if string.strip()]
+    return product_list
 
 
 def process_invoice(image):
