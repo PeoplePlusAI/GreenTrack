@@ -104,6 +104,7 @@ function calculateGrihaScore(location) {
         between375mAnd400m: 0,
     };
     const closestPlaces = {};
+    const exclusionThreshold = 0.05; // 50 meters, to exclude user location from results
 
     // Define priority services
     const priorityServices = {
@@ -118,7 +119,6 @@ function calculateGrihaScore(location) {
         bankingFacilities: ["atm", "bank"],
     };
 
-    // Function to check if a service is in the priority list
     function getCategoryName(types) {
         for (const [category, serviceTypes] of Object.entries(priorityServices)) {
             if (types.some(type => serviceTypes.includes(type))) {
@@ -128,7 +128,6 @@ function calculateGrihaScore(location) {
         return null;
     }
 
-    // Function to capitalize and format category names
     function formatCategoryName(name) {
         return name.replace(/([A-Z])/g, ' $1')
             .replace(/^./, str => str.toUpperCase())
@@ -147,31 +146,31 @@ function calculateGrihaScore(location) {
                 const closestPlace = results[0];
                 const distance = calculateDistance(location, closestPlace.geometry.location);
 
-                const categoryName = getCategoryName(place.types);
-                if (categoryName) {
-                    // Store the closest place if it hasn't been stored yet, or if the new place is closer
-                    if (!closestPlaces[categoryName] || closestPlaces[categoryName].distance > distance) {
-                        closestPlaces[categoryName] = {
-                            name: closestPlace.name,
-                            distance: distance,
-                        };
-                    }
+                // Exclude results that are too close to the original location (e.g., user location)
+                if (distance > exclusionThreshold) {
+                    const categoryName = getCategoryName(place.types);
+                    if (categoryName) {
+                        if (!closestPlaces[categoryName] || closestPlaces[categoryName].distance > distance) {
+                            closestPlaces[categoryName] = {
+                                name: closestPlace.name,
+                                distance: distance,
+                            };
+                        }
 
-                    if (distance < 0.375) {
-                        counts.lessThan375m++;
-                    } else if (distance <= 0.4) {
-                        counts.between375mAnd400m++;
+                        if (distance < 0.375) {
+                            counts.lessThan375m++;
+                        } else if (distance <= 0.4) {
+                            counts.between375mAnd400m++;
+                        }
                     }
                 }
 
-                // After iterating through all grihaPlaces
                 if (counts.lessThan375m >= 5) {
                     grihaScore = 2;
                 } else if (counts.between375mAnd400m >= 5) {
                     grihaScore = 1;
                 }
 
-                // Build the score breakdown for closest places with capitalized names
                 scoreBreakdown = Object.entries(closestPlaces).map(([category, data]) => {
                     return `${formatCategoryName(category)}: ${data.name}\nDistance: ${data.distance.toFixed(2)} km\n`;
                 }).join("\n");
@@ -182,8 +181,6 @@ function calculateGrihaScore(location) {
         });
     });
 }
-
-
 
 function calculateDistance(userLocation, location) {
     const rad = Math.PI / 180;
