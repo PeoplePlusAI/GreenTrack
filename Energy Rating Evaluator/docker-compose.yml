@@ -2,6 +2,7 @@ name: scraper
 
 services:
   backend:
+    container_name: scraper-backend
     build: .
     env_file:
       - .env
