@@ -13,7 +13,9 @@ And return the value of the star rating as a single integer between 1 and 5 (bot
 
 For example, if one of the features reads "Energy Rating - 2 Star energy efficiency", return the string "2".
 
-RETURN ONLY A SINGLE INTEGER. IF NO SUCH RATING IS FOUND, RETURN -1.
+IF NO SUCH RATING IS FOUND, RETURN -1.
+
+RETURN ONLY A SINGLE INTEGER. NO EXTRA TEXT APART FROM THE INTEGER.
 
 Product Features:
 {features}
