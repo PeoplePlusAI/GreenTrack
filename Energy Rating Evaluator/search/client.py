@@ -18,4 +18,4 @@ def extract_rating(features):
         response = extract_from.invoke(prompt_input)
         return response.strip()
     except:
-        return "Groq API Limit Reached. Please try again later."
+        raise Exception("Groq API Limit Reached. Please try again later.")

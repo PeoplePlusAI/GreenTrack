@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from utils.search_db import find_closest_match
-from utils.amazon import get_first_google_result, scrape_amazon_product
+from utils.amazon import get_relevant_amazon_result, scrape_amazon_product
 from . import client
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
@@ -13,14 +13,14 @@ def search_products(request):
     if request.method == 'GET':
         return render(request, 'search/search.html')
     query = request.POST.get("query", "")
-    first_url = get_first_google_result(query)
-    features = scrape_amazon_product(first_url)
+    first_url = get_relevant_amazon_result(query)
+    prod_name, features = scrape_amazon_product(first_url)
     rating = client.extract_rating(features)
     C = "Yes" if int(rating) >= 3 else "No"
     return render(
         request,
         "search/results.html",
-        {"products": [[query, rating, C]], "query": query},
+        {"products": [[prod_name, rating, C]], "query": query},
     )
 
 @require_http_methods(["POST"])
@@ -33,11 +33,11 @@ def upload_invoice(request):
     names = process_invoice(pil_image)
     results = []
     for name in names:
-        first_url = get_first_google_result(name)
-        features = scrape_amazon_product(first_url)
+        first_url = get_relevant_amazon_result(name)
+        prod_name, features = scrape_amazon_product(first_url)
         rating = client.extract_rating(features)
         C = "Yes" if int(rating) >= 3 else "No"
-        results.append([name, rating, C])
+        results.append([prod_name, rating, C])
     return render(
         request,
         "search/results.html",
