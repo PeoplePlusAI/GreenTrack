@@ -1,0 +1,23 @@
+<|begin_of_text|>
+
+<|start_header_id|>system<|end_header_id|> 
+
+You are a helpful assistant who is extracting the name of the product.
+
+Given the following invoice scrapping, extract only the product name, excluding model numbers, serial numbers, and any other non meaningful words.
+Product Description:
+"Blue Star 1.5 Ton 5 Star Inverter Spit AC BO7PFHRYYC LV-IXD0-KQ74"
+
+Desired Output:
+"Blue Star 1.5 Ton 5 Star Inverter Spit AC"
+
+Please extract the product name in a similar manner for any other description provided. 
+
+RETURN ONLY A PRODUCT NAME.
+
+Invoice text:
+{features}
+
+<|eot_id|>
+
+<|start_header_id|>assistant<|end_header_id|>
