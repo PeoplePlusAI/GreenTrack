@@ -6,14 +6,13 @@ from utils.io import read_file
 
 chat = ChatGroq(temperature=0, groq_api_key=GROQ_API_KEY, model_name=GROQ_CHAT_MODEL)
 
-extraction_prompt = PromptTemplate(
-    template=read_file("static/star_rating_prompt.txt"),
-    input_variables=["features"],
-)
-extract_from = extraction_prompt | chat | StrOutputParser()
-
-def extract_rating(features):
+def extract_agent(features, prompt_path = "static/star_rating_prompt.txt"):
     try:
+        extraction_prompt = PromptTemplate(
+            template=read_file(prompt_path),
+            input_variables=["features"],
+        )
+        extract_from = extraction_prompt | chat | StrOutputParser()
         prompt_input = {"features": '\n'.join(features)}
         response = extract_from.invoke(prompt_input)
         return response.strip()
