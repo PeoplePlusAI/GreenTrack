@@ -3,7 +3,7 @@
 This is an AI tool that would help automate the process of green building certification. 
 
 1. We aim to use AI to validate and verify various parameters within the [GRIHA Standards](https://www.grihaindia.org/files/Manual_VolI.pdf)
-2. We aim to demo the tool by automating the verification of one parameter within the standard (10% weightage), termed sustainable site planning.
+2. We aim to demo the tool by automating the verification some of the parameters within the standard, particularly sustainable .
 
 ## The problem 
 
