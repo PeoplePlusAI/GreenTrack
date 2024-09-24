@@ -1,4 +1,5 @@
-# Green Building Copilot
+# GreenTrack
+
 This is an AI tool that would help automate the process of green building certification. 
 
 1. We aim to use AI to validate and verify various parameters within the [GRIHA Standards](https://www.grihaindia.org/files/Manual_VolI.pdf)
