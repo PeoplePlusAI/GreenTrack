@@ -16,7 +16,7 @@ def search_products(request):
     first_url = get_top_non_sponsored_products(query)[0]
     prod_name, features = scrape_amazon_product(first_url)
     features.append('Name:' + prod_name)
-    rating = client.extract_rating(features)
+    rating = client.extract_agent(features)
     C = "Yes" if int(rating) >= 3 else "No"
     return render(
         request,
