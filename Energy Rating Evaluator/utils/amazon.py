@@ -14,7 +14,7 @@ def setup_driver():
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    driver = webdriver.Firefox(service=Service(ChromeDriverManager().install()) ,options=chrome_options)
+    driver = webdriver.Chrome(service=Service("/usr/bin/chromedriver") ,options=chrome_options)
     return driver
 
 def wait_for_element(driver, by, value, timeout=10):
