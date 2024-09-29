@@ -62,7 +62,7 @@ class TextExtractor:
 
 # Function to extract text from the invoice
 def extract_text_from_invoice(invoice_content):
-    prompt = read_file("static/names_extraction_prompt.txt").replace("{invoice_content}", invoice_content)
+    prompt = read_file("prompts/names_extraction_prompt.txt").replace("{invoice_content}", invoice_content)
     chat_completion = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model="llama3-70b-8192",

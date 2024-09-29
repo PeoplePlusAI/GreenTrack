@@ -34,7 +34,7 @@ def upload_invoice(request):
     names = process_invoice(pil_image)
     results = []
     for name in names:
-        name = client.extract_agent(name, prompt_path = "static/product_name.txt" )
+        name = client.extract_agent(name, prompt_path = "prompts/product_name.txt" )
         # first_url = get_relevant_amazon_result(name)
         first_url = get_top_non_sponsored_products(name)[0]
         prod_name, features = scrape_amazon_product(first_url)
