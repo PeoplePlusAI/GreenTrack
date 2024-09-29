@@ -53,3 +53,4 @@ The source code for the following projects can be found in this repository:
 
 - [Energy Rating Evaluator](./Energy%20Rating%20Evaluator)
 - [Proximity Evaluator](./Proximity%20Evaluator)
+- [Site Plan Analyzer](./Site%20Plan%20Analyzer)
