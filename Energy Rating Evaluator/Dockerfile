@@ -12,3 +12,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 ENV CHROME_BIN=/usr/bin/chromium
 ENV CHROME_DRIVER=/usr/bin/chromedriver
+
+COPY . .
+
+RUN python3 manage.py collectstatic --noinput
