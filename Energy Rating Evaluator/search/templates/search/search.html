@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <nav>
+        <a href="https://peopleplus.ai/" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="{% static 'PeopleAI.svg' %}" alt="People+ai Logo" style="height: 120px; width: 300px; margin-top: 0;">
+        </a>
+    </nav>
+
     <h1>Energy Rating Evaluator</h1>
     <form method="post">
         {% csrf_token %}
@@ -25,6 +31,10 @@
         </div>
         <button type="submit" id="attachButton">Submit</button>
     </form>
+    <footer style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 14px;">
+        <p>&copy; 2024 People+AI. All rights reserved.</p>
+        <p><strong>Legal Disclaimer:</strong> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias molestias ea, voluptate dignissimos asperiores, consequatur, placeat adipisci delectus enim sunt iste. Blanditiis minus provident voluptatibus nam fugiat possimus vel fugit?</p>
+    </footer>
     <script>
         document.getElementById('imageInput').addEventListener('change', function (e) {
             var fileName = e.target.files[0].name;

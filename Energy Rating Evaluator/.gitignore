@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 samples/
 resources/
+static/
