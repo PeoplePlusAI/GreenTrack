@@ -16,7 +16,7 @@ Please extract the product name in a similar manner for any other description pr
 RETURN ONLY A PRODUCT NAME.
 
 Invoice text:
-{features}
+{placeholder}
 
 <|eot_id|>
 

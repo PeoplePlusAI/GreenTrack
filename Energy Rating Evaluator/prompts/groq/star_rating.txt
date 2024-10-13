@@ -18,7 +18,7 @@ IF NO SUCH RATING IS FOUND, RETURN -1.
 RETURN ONLY A SINGLE INTEGER. NO EXTRA TEXT APART FROM THE INTEGER.
 
 Product Features:
-{features}
+{placeholder}
 
 <|eot_id|>
 

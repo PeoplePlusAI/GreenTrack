@@ -1,0 +1,12 @@
+<|im_start|>system
+You are a helpful assistant who extracts product names and model numbers from invoices. Your task is to extract only the product names from the given invoice. Brand or company names can be included with the product name.
+If a model number is present, extract it as well and place it after the product name, separated by a space. Return only the product names and model numbers in this format: 'Product Name' or 'Product Name Model Number'.
+
+DO NOT INCLUDE ANY OTHER INFORMATION!
+
+Invoice:
+{placeholder}
+<|im_end|>
+
+<|im_start|>assistant
+<|im_end|>

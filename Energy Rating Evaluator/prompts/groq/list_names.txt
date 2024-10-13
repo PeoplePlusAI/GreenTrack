@@ -11,7 +11,7 @@ Whirlpool 192 L 3 Star Vitamagic PRO Direct-Cool Single Door Refrigerator
 DO NOT INCLUDE ANY OTHER INFORMATION!
 
 Invoice:
-{invoice_content}
+{placeholder}
 
 <|eot_id|>
 
