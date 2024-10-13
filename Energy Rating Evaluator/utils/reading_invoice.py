@@ -1,13 +1,7 @@
 import pdfplumber
-from utils.env import GROQ_API_KEY
-from groq import Groq
+from utils.agent import call_agent
 from PIL import Image
-from utils.io import read_file
 import pytesseract
-
-# Initialize the Groq client
-client = Groq(api_key=GROQ_API_KEY)
-
 
 class TextExtractor:
     def __init__(self, file_path=None, image=None):
@@ -59,19 +53,12 @@ class TextExtractor:
         else:
             raise ValueError("No file path or image provided for text extraction.")
 
-
 # Function to extract text from the invoice
 def extract_text_from_invoice(invoice_content):
-    prompt = read_file("prompts/names_extraction_prompt.txt").replace("{invoice_content}", invoice_content)
-    chat_completion = client.chat.completions.create(
-        messages=[{"role": "user", "content": prompt}],
-        model="llama3-70b-8192",
-    )
-
-    response = chat_completion.choices[0].message.content.split("\n")[1:]
-    product_list = [string.strip() for string in response if string.strip()]
+    features = [invoice_content]
+    response = call_agent(features, f"list_names.txt")
+    product_list = [item.strip() for item in response.split("\n") if item.strip()]
     return product_list
-
 
 def process_invoice(image):
     # Create an instance of TextExtractor

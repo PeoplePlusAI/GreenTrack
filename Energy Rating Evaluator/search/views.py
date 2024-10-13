@@ -1,10 +1,9 @@
 from django.shortcuts import render
-from utils.search_db import find_closest_match
-from utils.amazon import get_relevant_amazon_result, scrape_amazon_product, get_top_non_sponsored_products
-from . import client
+from utils.amazon import scrape_amazon_product, get_top_non_sponsored_products
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
 from utils.reading_invoice import process_invoice
+from utils.agent import call_agent
 from PIL import Image
 import io
 
@@ -16,7 +15,7 @@ def search_products(request):
     first_url = get_top_non_sponsored_products(query)[0]
     prod_name, features = scrape_amazon_product(first_url)
     features.append('Name:' + prod_name)
-    rating = client.extract_agent(features)
+    rating = call_agent(''.join(features), prompt_file=f"star_rating.txt")
     C = "Yes" if int(rating) >= 3 else "No"
     return render(
         request,
@@ -34,13 +33,11 @@ def upload_invoice(request):
     names = process_invoice(pil_image)
     results = []
     for name in names:
-        name = client.extract_agent(name, prompt_path = "prompts/product_name.txt" )
-        # first_url = get_relevant_amazon_result(name)
+        name = call_agent(name, prompt_file=f"product_name.txt")
         first_url = get_top_non_sponsored_products(name)[0]
         prod_name, features = scrape_amazon_product(first_url)
         features.append('Name:' + prod_name)
-
-        rating = client.extract_agent(features)
+        rating = call_agent('\n'.join(features), prompt_file="star_rating.txt")
         C = "Yes" if int(rating) >= 3 else "No"
         results.append([prod_name, rating, C])
     return render(
