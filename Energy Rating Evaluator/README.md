@@ -6,9 +6,28 @@ mv .env.example .env
 ```
 Make any necessary changes to the fields.
 
-Then,  to start the backend, run:
+## Run service (Docker)
+
+To start the backend, run:
 ```
 docker compose up -d --build
 ```
 
 Visit [http://localhost:6001](http://localhost:6001) to view the frontend.
+
+## Run service (Podman)
+
+Build the container:
+```
+podman build -t scraper-backend .
+```
+
+Run the container:
+```
+podman run -d \
+  --name scraper \
+  --env-file .env \
+  -p 6001:6001 \
+  scraper-backend \
+  python3 manage.py runserver 0.0.0.0:6001
+```
