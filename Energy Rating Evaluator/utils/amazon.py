@@ -22,28 +22,6 @@ def wait_for_element(driver, by, value, timeout=10):
         EC.presence_of_element_located((by, value))
     )
 
-def get_relevant_amazon_result(product_name):
-    driver = setup_driver()
-    search_url = f"https://www.amazon.in/s?{urllib.parse.urlencode({'k': product_name})}"
-    driver.get(search_url)
-
-    print(f'Search url : {search_url}')
-
-    wait = WebDriverWait(driver, 10)
-    search_results = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, '[data-component-type="s-search-result"]')))
-    for result in search_results:
-        sponsored_element = result.find_elements(By.CSS_SELECTOR, '[data-component-type="sp-sponsored-result"]')
-        if not sponsored_element:
-            product_link = result.find_element(By.CSS_SELECTOR, 'h2 a')
-            product_url = product_link.get_attribute('href')
-
-            print(f'Product url: {product_url}')
-
-            driver.quit()
-            return product_url
-    driver.quit()
-    raise("Couldn't find the link to a non-sponsored Amazon product")
-
 def get_top_non_sponsored_products(product_name, num_products=1):
     driver = setup_driver()
     search_url = f"https://www.amazon.in/s?{urllib.parse.urlencode({'k': product_name})}"
