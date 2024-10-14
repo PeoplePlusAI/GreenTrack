@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from utils.reading_invoice import process_invoice
 from utils.agent import call_agent
 from PIL import Image
+import json
 import io
 
 @require_http_methods(["POST", "GET"])
@@ -16,11 +17,18 @@ def search_products(request):
     prod_name, features = scrape_amazon_product(first_url)
     features.append('Name:' + prod_name)
     rating = call_agent(''.join(features), prompt_file=f"star_rating.txt")
-    C = "Yes" if int(rating) >= 3 else "No"
+    log = {
+        "query": query,
+        "amazon_url": first_url,
+        "product_name": prod_name,
+        "rating": rating
+    }
+    print(json.dumps(log, indent=4))
+    verdict = "Yes" if int(rating) >= 3 else "No"
     return render(
         request,
         "search/results.html",
-        {"products": [[prod_name, rating, C]], "query": query},
+        {"products": [[prod_name, rating, verdict]], "query": query},
     )
 
 @require_http_methods(["POST"])
@@ -38,8 +46,15 @@ def upload_invoice(request):
         prod_name, features = scrape_amazon_product(first_url)
         features.append('Name:' + prod_name)
         rating = call_agent('\n'.join(features), prompt_file="star_rating.txt")
-        C = "Yes" if int(rating) >= 3 else "No"
-        results.append([prod_name, rating, C])
+        verdict = "Yes" if int(rating) >= 3 else "No"
+        log = {
+            "query": name,
+            "amazon_url": first_url,
+            "product_name": prod_name,
+            "rating": rating
+        }
+        print(json.dumps(log, indent=4))
+        results.append([prod_name, rating, verdict])
     return render(
         request,
         "search/results.html",
