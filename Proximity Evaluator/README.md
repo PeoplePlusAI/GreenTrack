@@ -21,3 +21,8 @@ This project involves the development of a web-based Proximity Score Calculator 
 
 To use the prototype edit script.js:line 7 and proxeval.html:line 26 and replace YOUR_API_KEY_HERE with your Google Maps API key.
 
+
+## Demo Video
+
+https://github.com/user-attachments/assets/cb31c5fe-53b6-4c0e-9b35-cb6ff4413714
+
