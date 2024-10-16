@@ -48,13 +48,15 @@ These challenges act as **barriers to adoption**, making it difficult for builde
 
 [PLACEHOLDER to add the instructions to locally run]
 
-## Documentation
-
 The source code for the following projects can be found in this repository:
 
 - [Energy Rating Evaluator](./Energy%20Rating%20Evaluator)
 - [Proximity Evaluator](./Proximity%20Evaluator)
 - [Site Plan Analyzer](./Site%20Plan%20Analyzer)
+
+## Documentation
+- [Project Deck](https://drive.google.com/file/d/10o8E93Yp8EM6o7b3wSwI6dJFk7DbwMM2/view)
+- [Blog](https://peopleplus.ai/blog/reimagining-green-building-certification-the-ai-powered-approach)
 
 ## Contributing
 
