@@ -1,4 +1,12 @@
-## Setup
+# Energy Rating Evaluator
+
+[PLACEHOLDER for intro]
+
+## How it works
+
+[Video Walkthrough](https://drive.google.com/file/d/1T4iVqlRn78_FvFj4byGTDDc55B74qbyq/view)
+
+## Getting Started
 
 Rename [`.env.example`](.env.example) to `.env`:
 ```
