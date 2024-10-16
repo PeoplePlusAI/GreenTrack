@@ -31,3 +31,8 @@ podman run -d \
   scraper-backend \
   python3 manage.py runserver 0.0.0.0:6001
 ```
+
+## Demo Video
+
+https://github.com/user-attachments/assets/e85a5398-0da3-423d-91f3-b079a51aec76
+
