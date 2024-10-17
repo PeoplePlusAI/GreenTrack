@@ -70,6 +70,6 @@ We welcome contributions from the community. To contribute to this project, plea
 Please reach out to **[meghana@peopleplus.ai](mailto:meghana@peopleplus.ai)** or **[vishnu@peopleplus.ai](mailto:vishnu@peopleplus.ai)** if you are interested in learning more about the project and taking on any of these parts. 
 
 ## **About Us**  
-People+ai connects do-ers, dreamers, tinkerers and innovators with ideas & resources to build an ecosystem that can empower a billion people to reach their potential. Learn more about other People+ai initiatives **[here](https://peopleplus.ai/)**.  
+People+ai connects do-ers, dreamers, tinkerers and innovators with ideas & resources to build an ecosystem that can empower a billion people to reach their potential. Learn more about other People+ai initiatives **[here](https://peopleplus.ai/)**.
 
 Made with ♥️ for 🇮🇳 by Team People+ai
