@@ -43,7 +43,6 @@ The **Proximity Score Calculator** leverages the **Google Maps API** to:
 2. Compute the distance from that location to the nearest essential services.  
 3. Display proximity scores, providing insights for sustainable and convenient living or business location selection.  
 
-[Video Walkthrough](https://drive.google.com/file/d/1c5BThMK2YknYrO_RshGMtycyLNO0qs3D/view)
 
 ## **Getting Started**
 
@@ -70,3 +69,10 @@ The **Proximity Score Calculator** leverages the **Google Maps API** to:
 
 3. **Open the Application Locally:**  
    - Open **`proxeval.html`** in your web browser to start using the tool.
+=======
+
+## Demo Video
+
+https://github.com/user-attachments/assets/cb31c5fe-53b6-4c0e-9b35-cb6ff4413714
+
+
