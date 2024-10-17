@@ -51,18 +51,6 @@ These challenges act as **barriers to adoption**, making it difficult for builde
 - This [worksheet](https://docs.google.com/spreadsheets/d/1ACInZjybHO91J53p1HrEaPxn8wKxdPAppkET2UgFlZw/edit?usp=sharing) contains a detailed list of all **GRIHA parameters** that need to be validated once relevant documents are uploaded.  
 - We conducted a **preliminary assessment** to determine which parameters can be **automated** and identified some of the key documents required for the automation process. These findings are also included in the worksheet.  
 
-
-### **Key Features**  
-
-| **Feature**                     | **Description**                                                                 |
-|----------------------------------|---------------------------------------------------------------------------------|
-| **Land Record Verification**     | Automates the process of checking land records across states and validates ownership history. |
-| **GIS and Locality Evaluation**  | Uses geospatial data to assess environmental impact and proximity to public facilities. |
-| **AI-Based Optimization**        | Helps with optimal placement of windows, lights, and ventilation systems for energy savings. |
-| **IoT-Enabled Monitoring**       | Tracks solar and wind energy utilization trends in real time.                    |
-| **Re-Certification**             | Continuously monitors environmental parameters for future re-certifications.    |
-
-
 ## **Getting Started**  
 
 **[PLACEHOLDER]** Add instructions to run the tool locally.  
