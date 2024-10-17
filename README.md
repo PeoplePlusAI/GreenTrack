@@ -1,7 +1,10 @@
+
+
+<div style="display:flex; width:100%; height: 400px; justify-content:center; align-items:center;">
+ <img src='./static/logo.png' width="400" height="400" style="object-fit: contain;">
+</div>
+
 # **GreenTrack: Fast-tracking Green Building Certification with AI**  
-
-**[placeholder for logo]**  
-
 
 ## **Table of Contents**  
 1. [Introduction](#introduction)  
