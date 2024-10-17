@@ -1,8 +1,6 @@
-
-
-<div style="display:flex; width:100%; height: 400px; justify-content:center; align-items:center;">
- <img src='./static/logo.png' width="400" height="400" style="object-fit: contain;">
-</div>
+<p align="center">
+  <img src='./static/logo.png' width="400" height="400" style="object-fit: contain; margin-left:auto; margin-right:auto;">
+</p>
 
 # **GreenTrack: Fast-tracking Green Building Certification with AI**  
 
