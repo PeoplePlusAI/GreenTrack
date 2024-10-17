@@ -1,4 +1,4 @@
-# **GreenTrack: AI-Driven Green Building Certification Tool**  
+# **GreenTrack: Fast-tracking Green Building Certification with AI**  
 
 **[placeholder for logo]**  
 
