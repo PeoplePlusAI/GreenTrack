@@ -1,56 +1,83 @@
-# GreenTrack
-
-This is an AI tool that would help automate the process of green building certification. 
-
-1. We aim to use AI to validate and verify various parameters within the [GRIHA Standards](https://www.grihaindia.org/files/Manual_VolI.pdf)
-2. We aim to demo the tool by automating the verification some of the parameters within the standard, particularly sustainable .
-
-## The problem 
-
-The green building certification process is: 
-
-* Lengthy
-* Expensive
-* High in human effort
-
-This leads to lesser adoption of green buildings. Our aim is to solve these challenges and incentivise green buildings using AI. 
-
-## The solution  
-
-Imagine an AI tool that would help various stakeholders in the green building certification process (builders, consultants, green building certification body, ULBs) quickly and efficiently verify compliance with GRIHA standards and claim the benefits. 
 
 
+<div style="display:flex; width:100%; height: 400px; justify-content:center; align-items:center;">
+ <img src='./static/logo.png' width="400" height="400" style="object-fit: contain;">
+</div>
 
-## How does this work ?
+# **GreenTrack: Fast-tracking Green Building Certification with AI**  
 
-- This is a [worksheet](https://docs.google.com/spreadsheets/d/1ACInZjybHO91J53p1HrEaPxn8wKxdPAppkET2UgFlZw/edit?usp=sharing) that contains all the GRIHA parameters that need to validated once relevant documents are uploaded.
-- We did some priliminary assessment of the feasibility of which parameters can be automated. Some of the document required for automation has also been identified and provided in the worksheet.
+## **Table of Contents**  
+1. [Introduction](#introduction)  
+2. [Our Goals](#our-goals)  
+3. [The Problem](#the-problem)  
+4. [The Solution: AI-Powered Certification](#the-solution-ai-powered-certification)  
+5. [GreenTrack Workplan](#greentrack-workplan)  
+   - [Automation Workflow for GreenTrack Certification](#automation-workflow-for-greentrack-certification)    
+6. [Getting Started](#getting-started)  
+7. [Project Resources:Learn more about Green Track](#Project-Resources-Learn-more-about-Green-Track)  
+8. [Contributing](#contributing)  
+9. [About Us](#about-us)  
 
-Here are some of the key steps we can get started with:
-1. Builders/consultants will upload the necessary documents including photos, videos, invoices, site plans...etc 
-2. Extract location details either from the files uploaded using OCR or directly upload the coordinates 
-3. Detect old trees, minimum nos of trees,...etc in the site plan using vision AI
-5. Use google map API or any OSM to say whether public facilities and amenities are present within the threshold
-7. Use computer vision to analyse designated vehicular tracks for NMT vehicles 
+## **Introduction**  
 
-## Next Commitments
+Project GreenTrack aims to create a stack of **AI-powered solutions** to **automate and streamline the process of green building certification**. This tool leverages **artificial intelligence** to validate and verify key parameters outlined under green building rating standards, beginning with Green Rating for Integrated Habitat Assessment [(GRIHA Standards)](https://docs.google.com/spreadsheets/d/1ACInZjybHO91J53p1HrEaPxn8wKxdPAppkET2UgFlZw/edit?usp=sharing). The aim is to make the process more faster, efficient, and affordable.
 
-We are looking for enthusiastic volunteers who can own pieces of this design puzzle. Please reach out to meghana@peopleplus.ai/vishnu@peopleplus.ai if you have expertise and/or interest in:
-
-1. **Technical Architecture**: Build out these capabilities using machine learning.
+### **Our Goals**  
+1. **Automate** the verification and validation of parameters within the **GRIHA framework**.  
+2. **Demonstrate** the tool’s capabilities by automating select parameters—specifically focusing on **sustainable site planning** and **energy efficency** criterions.  
+3. **Incentivize green buildings** by reducing the time, cost, and effort associated with certification, promoting wider adoption of sustainable built environments.
 
 
-## Questions?
+### **The Problem**  
+The current green building certification process is:  
+- **Effort-Intensive:** Requires significant human involvement to track compliance, complete and verify paperwork.
+- **Lengthy:** Involves multiple stakeholders, extensive documentation, and manual assessments.  
+- **Expensive:** High costs associated with consulting, auditing, and approvals.  
 
-If you have any queries/doubts or new ideas regarding this project please create an issue in this repo. Let's have a discussion! For any other queries, please reach out to [meghana](mailto:meghana@peopleplus.ai) 
+These challenges act as **barriers to adoption**, making it difficult for builders, developers, and organizations to commit to sustainable construction practices. As a result, the widespread implementation of **green buildings** has been limited.
+
+### **The Solution: AI-Powered Certification**  
+
+**GreenTrack** envisions a future where **AI transforms the green certification process** into a fast, efficent and cost-effective experience. Our tool aims to:  
+
+1. **Automate Compliance Checks:** AI-driven tools to verify compliance with minimal manual effort.  
+2. **Assist Stakeholders Seamlessly:** Support for builders, consultants, auditors, ULBs, and certification bodies to quickly verify and demonstrate compliance with **GRIHA standards**.  
+3. **Promote Green Building Adoption:** By reducing certification costs and time, we encourage more developers to pursue sustainable construction.
+
+## **GreenTrack Workplan**
+
+### **Automation Workflow for GreenTrack Certification**  
+
+- This [worksheet](https://docs.google.com/spreadsheets/d/1ACInZjybHO91J53p1HrEaPxn8wKxdPAppkET2UgFlZw/edit?usp=sharing) contains a detailed list of all **GRIHA parameters** that need to be validated once relevant documents are uploaded.  
+- We conducted a **preliminary assessment** to determine which parameters can be **automated** and identified some of the key documents required for the automation process. These findings are also included in the worksheet.  
+
+## **Getting Started**  
+
+**[PLACEHOLDER]** Add instructions to run the tool locally.  
+
+The source code for the following projects can be found in these repositories:  
+
+- [Energy Rating Evaluator](./Energy%20Rating%20Evaluator)  
+- [Proximity Evaluator](./Proximity%20Evaluator)  
+- [Site Plan Analyzer](./Site%20Plan%20Analyzer)  
 
 
-Learn more about other [people+ai](https://peopleplus.ai/) initiatives.
+## **Project Resources:Learn more about Green Track**   
+- [Blog](https://peopleplus.ai/blog/reimagining-green-building-certification-the-ai-powered-approach)
+- [Project Deck](https://drive.google.com/file/d/10o8E93Yp8EM6o7b3wSwI6dJFk7DbwMM2/view)
+- [GRIHA AI Feasability Worksheet](https://docs.google.com/spreadsheets/d/1ACInZjybHO91J53p1HrEaPxn8wKxdPAppkET2UgFlZw/edit?usp=sharing)
+- Play around with Prototype 1: [Proximity Evaluator](https://green-track-proximityevaluator.vercel.app/)
+- Play around with Prototype 2: [Energy Rating Evaluator](https://greentrack.pplus.ai/)
 
-## Contents
+## **Contributing**  
 
-The source code for the following projects can be found in this repository:
+We are looking for enthusiastic volunteers who can own pieces of this design puzzle. [Click Here](https://pplus.ai/openroles) to find parts of the project for you to take up and contribute to. Your efforts would significantly aid the
+Please reach out to **[meghana@peopleplus.ai](mailto:meghana@peopleplus.ai)** or **[vishnu@peopleplus.ai](mailto:vishnu@peopleplus.ai)** if you are interested in learning more about the project and taking on any of these parts. 
 
-- [Energy Rating Evaluator](./Energy%20Rating%20Evaluator)
-- [Proximity Evaluator](./Proximity%20Evaluator)
-- [Site Plan Analyzer](./Site%20Plan%20Analyzer)
+## **About Us**  
+
+If you have any queries or new ideas regarding this project, please create an **issue** in this repository. Let's have a discussion!  
+
+For other queries, please reach out to **[meghana@peopleplus.ai](mailto:meghana@peopleplus.ai)** or **[vishnu@peopleplus.ai](mailto:vishnu@peopleplus.ai)**.  
+
+Learn more about other **[People+AI](https://peopleplus.ai/)** initiatives.  
