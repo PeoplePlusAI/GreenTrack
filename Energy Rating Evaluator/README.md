@@ -1,5 +1,7 @@
 # Energy Rating Evaluator
 
+[Product Walkthrough](https://greentrack.pplus.ai/)
+
 [PLACEHOLDER for intro]
 
 ## How it works
