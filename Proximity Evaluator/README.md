@@ -1,4 +1,7 @@
 # **Proximity Score Calculator**  
+
+[Product Walkthrough](https://green-track-proximityevaluator.vercel.app/)
+
 The **Proximity Score Calculator** is a **web-based tool** designed to assess the accessibility of key services and amenities based on a user-defined location. It follows the principles of the **Green Rating for Integrated Habitat Assessment (GRIHA)**, which promotes sustainable and well-planned urban development. 
 
 Using the **Google Maps API**, the tool evaluates proximity to essential amenities, allowing users to make informed decisions about residential, commercial, or business locations based on convenience, accessibility, and sustainability.
@@ -40,7 +43,7 @@ The **Proximity Score Calculator** leverages the **Google Maps API** to:
 2. Compute the distance from that location to the nearest essential services.  
 3. Display proximity scores, providing insights for sustainable and convenient living or business location selection.  
 
-[Video Walkthrough]()
+[Video Walkthrough](https://drive.google.com/file/d/1c5BThMK2YknYrO_RshGMtycyLNO0qs3D/view)
 
 ## **Getting Started**
 
