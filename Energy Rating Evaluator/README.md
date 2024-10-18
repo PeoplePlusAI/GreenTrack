@@ -1,12 +1,12 @@
 # Energy Rating Evaluator
 
-[Product Walkthrough](https://greentrack.pplus.ai/)
+This tool automates the verification of energy efficency compliance under green building rating systems. Under **Green Rating for Integrated Habitat Assessment (GRIHA)** guidelines, all electrical equipments used in the building must be Bureau of Energy Efficency (BEE) star rated. Only if the equipment is rated 3 star or above will it be considered GRIHA compliant. This tool fetches the BEE star rating of any given electrical appliance to assess GRIHA compliance. Use the link below to test it out :-
 
-[PLACEHOLDER for intro]
+[Product Walkthrough](https://greentrack.pplus.ai/)
 
 ## How it works
 
-[Video Walkthrough](https://drive.google.com/file/d/1T4iVqlRn78_FvFj4byGTDDc55B74qbyq/view)
+https://github.com/user-attachments/assets/e85a5398-0da3-423d-91f3-b079a51aec76
 
 ## Getting Started
 
@@ -42,7 +42,5 @@ podman run -d \
   python3 manage.py runserver 0.0.0.0:6001
 ```
 
-## Demo Video
 
-https://github.com/user-attachments/assets/e85a5398-0da3-423d-91f3-b079a51aec76
 
