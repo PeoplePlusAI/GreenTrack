@@ -1,10 +1,10 @@
 # **Proximity Score Calculator**  
 
-[Product Walkthrough](https://green-track-proximityevaluator.vercel.app/)
-
 The **Proximity Score Calculator** is a **web-based tool** designed to assess the accessibility of key services and amenities based on a user-defined location. It follows the principles of the **Green Rating for Integrated Habitat Assessment (GRIHA)**, which promotes sustainable and well-planned urban development. 
 
-Using the **Google Maps API**, the tool evaluates proximity to essential amenities, allowing users to make informed decisions about residential, commercial, or business locations based on convenience, accessibility, and sustainability.
+Using the **Google Maps API**, the tool evaluates proximity to essential amenities, allowing users to make informed decisions about residential, commercial, or business locations based on convenience, accessibility, and sustainability.Use the link below to test it out :-
+
+ [Product Walkthrough](https://green-track-proximityevaluator.vercel.app/)
 
 ## **Features**  
 The tool calculates the distance from the user’s location to the nearest essential services, including:
@@ -36,13 +36,13 @@ The tool calculates the distance from the user’s location to the nearest essen
   - Religious Places  
   - Restaurants and Cafes  
 
-
 ## **How It Works**  
 The **Proximity Score Calculator** leverages the **Google Maps API** to:  
 1. Take a **user-defined location** as input (coordinates or address).  
 2. Compute the distance from that location to the nearest essential services.  
-3. Display proximity scores, providing insights for sustainable and convenient living or business location selection.  
+3. Display proximity scores, providing insights for sustainable and convenient living or business location selection.
 
+https://github.com/user-attachments/assets/cb31c5fe-53b6-4c0e-9b35-cb6ff4413714
 
 ## **Getting Started**
 
@@ -71,8 +71,7 @@ The **Proximity Score Calculator** leverages the **Google Maps API** to:
    - Open **`proxeval.html`** in your web browser to start using the tool.
 =======
 
-## Demo Video
 
-https://github.com/user-attachments/assets/cb31c5fe-53b6-4c0e-9b35-cb6ff4413714
+
 
 
