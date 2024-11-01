@@ -1,0 +1,10 @@
+name: analyzer
+
+services:
+  backend:
+    container_name: analyzer-app
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:${PORT}"

@@ -1,0 +1,12 @@
+[server]
+port = 6001
+address = "0.0.0.0"
+maxUploadSize = 10
+runOnSave = true
+headless = true
+
+[client]
+toolbarMode = "minimal"
+
+[ui]
+hideTopBar = true
