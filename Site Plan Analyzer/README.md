@@ -28,3 +28,5 @@ This is a work in process and the team is in the process of building it out. We 
 
 To contribute to this project, please follow the guidelines outlined in [CONTRIBUTING.md](./CONTRIBUTING.md). Please reach out to **[meghana@peopleplus.ai](mailto:meghana@peopleplus.ai)** or **[vishnu@peopleplus.ai](mailto:vishnu@peopleplus.ai)** if you are interested in taking on any of these parts. 
 
+## Setup
+
