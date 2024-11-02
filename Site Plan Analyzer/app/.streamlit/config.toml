@@ -1,9 +1,12 @@
 [server]
 port = 6001
 address = "0.0.0.0"
-maxUploadSize = 10
+maxUploadSize = 20
 runOnSave = true
 headless = true
+
+[browser]
+# serverAddress = ""
 
 [client]
 toolbarMode = "minimal"

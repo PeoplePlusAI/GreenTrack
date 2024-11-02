@@ -7,8 +7,10 @@ RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     && apt-get clean
 
-COPY . .
+COPY ./requirements.txt .
 
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
+
+COPY ./app .
 
 ENTRYPOINT ["streamlit", "run", "main.py"]
