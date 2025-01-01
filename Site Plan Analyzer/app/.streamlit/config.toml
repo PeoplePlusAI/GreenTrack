@@ -1,12 +1,9 @@
 [server]
-port = 3000
+port = 6001
 address = "0.0.0.0"
 maxUploadSize = 20
 runOnSave = true
 headless = true
-
-[browser]
-serverAddress = "siteplan.atrey-a.com"
 
 [client]
 toolbarMode = "minimal"
