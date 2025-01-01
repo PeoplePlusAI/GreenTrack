@@ -5,6 +5,7 @@ WORKDIR /code
 RUN apt-get update && apt-get install -y \
     curl \
     tesseract-ocr \
+    python3-opencv \
     && apt-get clean
 
 COPY ./requirements.txt .
