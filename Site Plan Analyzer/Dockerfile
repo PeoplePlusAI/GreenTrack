@@ -14,4 +14,6 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 COPY ./app .
 
-ENTRYPOINT ["streamlit", "run", "main.py"]
+COPY ./entrypoint.sh .
+
+CMD ["sh", "entrypoint.sh"]
